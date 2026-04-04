@@ -1,0 +1,1 @@
+export const element3 = <button onClick={() => alert("Clicked!")}>Click Me</button>
