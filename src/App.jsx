@@ -55,6 +55,8 @@ import { Profile1, Profile2, Profile3 } from "./advanced/concept3-higher-order-c
 import { AuthProviderHoc, AuthProviderRender, DataProvider, DataProvider2, MouseTracker, MouseTracker2, ThemeProviderContext, TimerProvider } from "./advanced/concept4-render-props/RenderProps";
 import { CounterComponent, NameComponent, RefactoredComponent, TimerComponent, ToggleComponent, useWindowWidth } from "./advanced/concept5-custom-hooks/CustomHooks";
 import { CallbackCounter, CallbackCounter2, ExpensiveCalc, ExpensiveCalc2, GreetingMemo, GreetingMemo2 } from "./advanced/concept6-performance-optimization/PerformanceOptimization";
+import ErrorBoundary, { ErrorBoundary2 } from "./advanced/concept7-error-boundaries/ErrorBoundaries";
+import ReviewsSection, { BuggyComponent } from "./advanced/concept7-error-boundaries/BuggyComponent";
 
 // Basics:
 /* 
@@ -344,25 +346,52 @@ function App() {
 //   )
 // }
 
+// Performance Optimization:
+// function App() {
+//   return (
+//     <>
+//       <div style={{ margin:"20px", background:"#333"}}>
+//         <h1>Concept 6 - Performance Optimization</h1>
+
+//         <GreetingMemo name="Suraj" />
+//         <GreetingMemo name="Suraj" />
+//         <ExpensiveCalc num={5000} />
+//         <CallbackCounter />
+//         <GreetingMemo2 name="Cherry" />
+//         <ExpensiveCalc2 num={10} />
+//         <CallbackCounter2 />
+//         {/* <VirtualizedList>
+//           {(23, {background:"#999"})}
+//         </VirtualizedList> */}
+//       </div>
+
+
+//     </>
+//   )
+// }
+
+// Error Boundaries:
 function App() {
+
+  // Empty array
+  const reviews = [];
+
   return (
     <>
-      <div style={{ margin:"20px", background:"#333"}}>
-        <h1>Concept 6 - Performance Optimization</h1>
-
-        <GreetingMemo name="Suraj" />
-        <GreetingMemo name="Suraj" />
-        <ExpensiveCalc num={5000} />
-        <CallbackCounter />
-        <GreetingMemo2 name="Cherry" />
-        <ExpensiveCalc2 num={10} />
-        <CallbackCounter2 />
-        {/* <VirtualizedList>
-          {(23, {background:"#999"})}
-        </VirtualizedList> */}
+      <div>
+        <h1>Concept 7 - Error Boundaries</h1>
+        <div>
+          <ErrorBoundary>
+            {/* <ReviewsSection /> // Passing no array to trigger bug  */}
+            <ReviewsSection reviews={reviews} /> // Passing empty array to trigger bug
+          </ErrorBoundary>
+        </div>
+        <div>
+          <ErrorBoundary2>
+            <BuggyComponent />
+          </ErrorBoundary2>
+        </div>
       </div>
-
-
     </>
   )
 }
