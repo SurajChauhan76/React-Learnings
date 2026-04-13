@@ -57,6 +57,7 @@ import { CounterComponent, NameComponent, RefactoredComponent, TimerComponent, T
 import { CallbackCounter, CallbackCounter2, ExpensiveCalc, ExpensiveCalc2, GreetingMemo, GreetingMemo2 } from "./advanced/concept6-performance-optimization/PerformanceOptimization";
 import ErrorBoundary, { ErrorBoundary2 } from "./advanced/concept7-error-boundaries/ErrorBoundaries";
 import ReviewsSection, { BuggyComponent } from "./advanced/concept7-error-boundaries/BuggyComponent";
+import UseModal, { ButtonWithTooltip, ModalProvider, NotificationPortal, ProfilePortal, UseModal2 } from "./advanced/concept8-portal/Portal";
 
 // Basics:
 /* 
@@ -390,6 +391,19 @@ function App() {
           <ErrorBoundary2>
             <BuggyComponent />
           </ErrorBoundary2>
+        </div>
+
+        {/* Concept 8 - Portal */}
+        <div>
+          <h1>Concept 8 - Portal</h1>
+          <UseModal />
+          <UseModal2 />
+          <ButtonWithTooltip />
+          <NotificationPortal message="New update available!" />
+          <br />
+          <ModalProvider>
+            <ProfilePortal />
+          </ModalProvider>
         </div>
       </div>
     </>
