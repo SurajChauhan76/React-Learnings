@@ -31,11 +31,11 @@ import { DailyTodoList, EmployeeList, FruitList, Groceries, NameList, NestedList
 import { LifecycleMountCompo, HookMountCompo, LifecycleUpdateCompo, HookUpdateCompo, LifecycleUnmountCompo, HookUnmountCompo, Timer, HookTimer, DataFetcher, TaskCleaner } from "./basics/concept8-lifecycle-hooks/lifecycle_hooks";
 import { CheckboxForm, ClickCounter, ControlledCheckBox, ControlledInput, FocusInput, LoginForm, NameForm, SelectForm, UncontrolledForm, ControlledLoginForm, ControlledDropdown } from "./basics/concept9-forms-controlled-components/forms_contolled_uncontrolled_components";
 import { Card, Layout, MyGameApp, MyReusableButtons } from "./basics/concept10-component-composition/Component_Composition";
-import { Parent, UserContext } from "./advanced/concept1-contentapi-propdrilling/01_ContextAPIPropDrilling";
-import { ThemeProvider, Toolbar } from "./advanced/concept1-contentapi-propdrilling/02_ThemeContext";
-import { DeeplyNested, UserProvider } from "./advanced/concept1-contentapi-propdrilling/03_UserContextDeeplyNested";
-import { DeepComponent, LanguageProvider } from "./advanced/concept1-contentapi-propdrilling/04_LanguageContext";
-import { CombineDashboard } from "./advanced/concept1-contentapi-propdrilling/05_CombineContextState";
+import { Parent, UserContext } from "./advanced/concept1-contextapi-propdrilling/01_ContextAPIPropDrilling";
+import { ThemeProvider, Toolbar } from "./advanced/concept1-contextapi-propdrilling/02_ThemeContext";
+import { DeeplyNested, UserProvider } from "./advanced/concept1-contextapi-propdrilling/03_UserContextDeeplyNested";
+import { DeepComponent, LanguageProvider } from "./advanced/concept1-contextapi-propdrilling/04_LanguageContext";
+import { CombineDashboard } from "./advanced/concept1-contextapi-propdrilling/05_CombineContextState";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./advanced/concept2-react-router/Navbar";
