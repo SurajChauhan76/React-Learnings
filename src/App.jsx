@@ -58,6 +58,7 @@ import { CallbackCounter, CallbackCounter2, ExpensiveCalc, ExpensiveCalc2, Greet
 import ErrorBoundary, { ErrorBoundary2 } from "./advanced/concept7-error-boundaries/ErrorBoundaries";
 import ReviewsSection, { BuggyComponent } from "./advanced/concept7-error-boundaries/BuggyComponent";
 import UseModal, { ButtonWithTooltip, ModalProvider, NotificationPortal, ProfilePortal, UseModal2 } from "./advanced/concept8-portal/Portal";
+import { ChartComponent, ChartComponent2, ChartComponent3, ChartComponent4, InputDemoRef, InputFocus, MeasureBox, MyForwardRef, TimerReference } from "./advanced/concept9-refs-forwarding-refs/Refs";
 
 // Basics:
 /* 
@@ -371,42 +372,80 @@ function App() {
 //   )
 // }
 
-// Error Boundaries:
+// Concept-7: Error Boundaries:
+// function App() {
+
+//   // Empty array
+//   const reviews = [];
+
+//   return (
+//     <>
+//       <div>
+//         <h1>Concept 7 - Error Boundaries</h1>
+//         <div>
+//           <ErrorBoundary>
+//             {/* <ReviewsSection /> // Passing no array to trigger bug  */}
+//             <ReviewsSection reviews={reviews} /> // Passing empty array to trigger bug
+//           </ErrorBoundary>
+//         </div>
+//         <div>
+//           <ErrorBoundary2>
+//             <BuggyComponent />
+//           </ErrorBoundary2>
+//         </div>
+
+//         {/* Concept 8 - Portal */}
+//         <div>
+//           <h1>Concept 8 - Portal</h1>
+//           <UseModal />
+//           <UseModal2 />
+//           <ButtonWithTooltip />
+//           <NotificationPortal message="New update available!" />
+//           <br />
+//           <ModalProvider>
+//             <ProfilePortal />
+//           </ModalProvider>
+//         </div>
+//       </div>
+//     </>
+//   )
+// }
+
+
+// Concept-8: Refs & Forwarding Refs
 function App() {
-
-  // Empty array
-  const reviews = [];
-
   return (
     <>
-      <div>
-        <h1>Concept 7 - Error Boundaries</h1>
-        <div>
-          <ErrorBoundary>
-            {/* <ReviewsSection /> // Passing no array to trigger bug  */}
-            <ReviewsSection reviews={reviews} /> // Passing empty array to trigger bug
-          </ErrorBoundary>
-        </div>
-        <div>
-          <ErrorBoundary2>
-            <BuggyComponent />
-          </ErrorBoundary2>
-        </div>
+    <h1>Refs & Forwarding Refs</h1>
 
-        {/* Concept 8 - Portal */}
-        <div>
-          <h1>Concept 8 - Portal</h1>
-          <UseModal />
-          <UseModal2 />
-          <ButtonWithTooltip />
-          <NotificationPortal message="New update available!" />
-          <br />
-          <ModalProvider>
-            <ProfilePortal />
-          </ModalProvider>
-        </div>
-      </div>
-    </>
+    <div>
+      <InputFocus />
+    </div> <br />
+    <div>
+      <TimerReference />
+      <br />
+      <br />
+      <MyForwardRef />
+    </div>
+    <br />
+    <div>
+      <InputDemoRef />
+      <br />
+      <MeasureBox />
+    </div>
+    <div style={{ margin: "20px", padding: "15px", background: "gray"}}>
+      <ChartComponent />
+    </div>
+    <div style={{ margin: "20px", background: "white"}}>
+      <ChartComponent2 />
+    </div>
+    <div style={{ margin: "20px", padding: "10px", background: "white"}}>
+      <ChartComponent3 />
+    </div>
+    <div style={{ margin: "20px", padding: "10px", background: "white"}}>
+      <ChartComponent4 />
+    </div>
+  </>
   )
 }
 export default App;
